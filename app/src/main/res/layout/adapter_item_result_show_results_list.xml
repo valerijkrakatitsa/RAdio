@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="@dimen/list_result_item_height"
+    android:background="@drawable/background_item_show_result_list"
+    android:elevation="@dimen/list_item_elevation">
+
+    <TextView
+        android:layout_width="@dimen/list_icon_width"
+        android:layout_height="match_parent"
+        android:id="@+id/resultItemTime"
+        android:gravity="fill_vertical"
+        android:textSize="@dimen/list_item_time_text_textSize"/>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       android:id="@+id/layoutResultItem">
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/resultItemSinger"
+           android:textSize="@dimen/list_item_singer_text_textSize"
+           android:gravity="center_vertical"
+           android:singleLine="true" />
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/resultItemSong"
+           android:textSize="@dimen/list_item_song_text_textSize"
+           android:gravity="center_vertical"
+           android:singleLine="true"
+           android:layout_marginTop="@dimen/list_result_item_song_margin_top" />
+
+
+
+   </LinearLayout>
+
+
+
+
+</LinearLayout>

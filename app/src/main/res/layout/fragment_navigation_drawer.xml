@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="#cfd8dc"
+    android:id="@+id/fragment_main_layout"
+    android:clickable="true">
+
+    <TextView
+        android:id="@+id/drawerSongName"
+        android:text="@string/drawer_NoPlayedSong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/drawer_playedSong_marginTop"
+        android:textSize="@dimen/drawer_playedSong_textSize"
+        android:textColor="@color/black"
+        android:lines="2"
+        android:longClickable="false" />
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:gravity="center"
+       android:layout_marginTop="@dimen/drawer_buttonPlay_layout_marginTop">
+
+       <ImageButton
+           android:id="@+id/drawerButtonStopAndPlay"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:background="@drawable/background_round_button_play_and_pause"
+           android:contentDescription="@string/buttonPlay"
+           android:src="@android:drawable/ic_media_play"
+           android:padding="@dimen/drawer_buttonPlay_button_padding"
+           android:adjustViewBounds="false" />
+
+   </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/drawer_seekPanel_layout_marginTop">
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/drawerProgress"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/drawerSongTimeLeft"
+            android:layout_toStartOf="@+id/drawerSongTimeLeft" />
+        <TextView
+            android:id="@+id/drawerSongTimeLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/drawer_PlayedSong_time"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="@dimen/drawer_seekPanel_durationText_marginRight"
+            android:layout_marginLeft="@dimen/drawer_seekPanel_durationText_marginLeft" />
+
+        </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/drawer_optionPanel_mainlayout_marginTop">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/drawer_optionPanel_firstLayouts_height"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:id="@+id/downloadSongDrawerLayout"
+                android:background="@drawable/background_navigation_menu_items">
+
+                <ImageView
+                    android:layout_width="@dimen/drawer_optionPanel_Layouts_image_width"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_menu_save"
+                    android:contentDescription="@string/downloadSongDrawerItem"
+                    android:minHeight="@dimen/drawer_optionPanel_Layouts_image_minWidth"
+                    android:minWidth="@dimen/drawer_optionPanel_Layouts_image_minHeight"
+                    android:layout_gravity="center_vertical"
+                    android:adjustViewBounds="false" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/downloadSongDrawerItem"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/drawer_optionPanel_Layouts_text_textSize"
+                    android:textColor="@drawable/background_navigation_text_style" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/drawer_optionPanel_firstLayouts_height"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:id="@+id/AddtoFavoriteVk"
+                android:background="@drawable/background_navigation_menu_items">
+
+                <ImageView
+                    android:layout_width="@dimen/drawer_optionPanel_Layouts_image_width"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_menu_add"
+                    android:layout_gravity="start|center_vertical"
+                    android:minHeight="@dimen/drawer_optionPanel_Layouts_image_minHeight"
+                    android:minWidth="@dimen/drawer_optionPanel_Layouts_image_minWidth"
+                    android:contentDescription="@string/addInVkList" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/addInVkList"
+                    android:gravity="center_vertical|start"
+                    android:singleLine="false"
+                    android:textSize="@dimen/drawer_optionPanel_Layouts_text_textSize"
+                    android:textColor="@drawable/background_navigation_text_style" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/drawer_optionPanel_firstLayouts_height"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:id="@+id/showMoreResults"
+                android:background="@drawable/background_navigation_menu_items">
+
+                <ImageView
+                    android:layout_width="@dimen/drawer_optionPanel_Layouts_image_width"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/strShowMoreResults"
+                    android:src="@android:drawable/ic_menu_directions"
+                    android:minHeight="@dimen/drawer_optionPanel_Layouts_image_minHeight"
+                    android:minWidth="@dimen/drawer_optionPanel_Layouts_image_minWidth"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/strShowMoreResults"
+                    android:gravity="center_vertical|start"
+                    android:singleLine="false"
+                    android:textSize="@dimen/drawer_optionPanel_Layouts_text_textSize"
+                    android:textColor="@drawable/background_navigation_text_style" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/drawer_optionPanel_firstLayouts_height"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:id="@+id/send_mail"
+                android:background="@drawable/background_navigation_menu_items"
+                android:layout_marginTop="@dimen/drawer_optionPanel_secondLayout_marginTop">
+
+                <ImageView
+                    android:layout_width="@dimen/drawer_optionPanel_Layouts_image_width"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_dialog_email"
+                    android:contentDescription="@string/navigationSendMail"
+                    android:minHeight="@dimen/drawer_optionPanel_Layouts_image_minHeight"
+                    android:minWidth="@dimen/drawer_optionPanel_Layouts_image_minWidth"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/navigationSendMail"
+                    android:gravity="center_vertical|start"
+                    android:singleLine="false"
+                    android:textSize="@dimen/drawer_optionPanel_Layouts_text_textSize"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/drawer_optionPanel_firstLayouts_height"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:id="@+id/VKLog"
+                android:background="@drawable/background_navigation_menu_items">
+
+                <ImageView
+                    android:layout_width="@dimen/drawer_optionPanel_Layouts_image_width"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/drawer_optionPanel_Layouts_image_minHeight"
+                    android:minWidth="@dimen/drawer_optionPanel_Layouts_image_minWidth"
+                    android:src="@drawable/icon_vk"
+                    android:contentDescription="@string/vk_authorization"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/vk_authorization"
+                    android:gravity="center_vertical|start"
+                    android:singleLine="false"
+                    android:textSize="@dimen/drawer_optionPanel_Layouts_text_textSize"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

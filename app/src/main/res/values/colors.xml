@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_red_title">#e63d3d</color>
+    <color name="color_green_frame_title">#6cf622</color>
+    <color name="white">#ffffff</color>
+    <color name="blue_actionBar">#78909c</color>
+    <color name="blue_header">#b0bec5</color>
+    <color name="blue_items">#cfd8dc</color>
+    <color name="chooseTime_Seekbar_thumb">#ff5722</color>
+    <color name="chooseTime_Seekbar_range">#ff5722</color>
+    <color name="black">#cf000000</color>
+    <color name="searchButton_blue_enable">#0288d1</color>
+    <color name="searchButton_blue_pressed">#530288d1</color>
+    <color name="chooseTime_buttons_enable_startColor">#cdf4511e</color>
+    <color name="chooseTime_buttons_enable_centerColor">#f4511e</color>
+    <color name="chooseTime_buttons_enable_endColor">#b4f4511e</color>
+    <color name="mainActivity_list_item_pressed">#1e9dd6</color>
+    <color name="mainActivity_list_item_focused">#e11710</color>
+    <color name="list_item_pressed">#c9cbcc</color>
+    <color name="button_play">#d2f4511e</color>
+    <color name="button_play_pressed">#78f4511e</color>
+</resources>

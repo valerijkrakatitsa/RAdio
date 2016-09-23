@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_item_height"
+    android:orientation="horizontal"
+    android:clickable="true"
+    android:elevation="@dimen/list_item_elevation"
+    android:background="@drawable/background_main_activity_list"
+    android:layout_marginBottom="@dimen/list_item_margin_bottom"
+    android:paddingLeft="@dimen/list_item_padding_left"
+    android:paddingRight="@dimen/list_item_padding_right">
+
+    <ImageView
+        android:layout_width="@dimen/list_icon_width"
+        android:layout_height="match_parent"
+        android:id="@+id/station_icon"
+        android:adjustViewBounds="false"
+        android:layout_gravity="center"
+        android:src="@drawable/abc_ic_star_black_16dp" />
+
+    <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="match_parent"
+       android:id="@+id/radio_station_name"
+        android:textSize="@dimen/mainActivityList_text_textSize"
+        android:layout_weight="1"
+        android:enabled="false"
+        android:textColor="@color/black"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/list_item_text_padding_left" />
+
+</LinearLayout>

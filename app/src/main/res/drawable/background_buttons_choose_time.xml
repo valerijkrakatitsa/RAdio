@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:state_pressed="true"
+        android:state_enabled="true">
+
+        <shape>
+
+            <solid android:color="#ff80cbc4"/>
+            <stroke android:color="#507baf"/>
+            <corners android:radius="@dimen/chooseTime_button_radius"/>
+            <padding android:left="@dimen/chooseTime_button_paddingLeft"
+                android:right="@dimen/chooseTime_button_paddingRight"
+                android:bottom="@dimen/chooseTime_button_paddingBottom"
+                android:top="@dimen/chooseTime_button_paddingTop"/>
+
+        </shape>
+
+    </item>
+
+    <item
+        android:state_focused="true"
+        android:state_enabled="true">
+
+        <shape>
+            <solid android:color="@color/chooseTime_buttons_enable_centerColor"/>
+            <stroke android:color="@color/chooseTime_buttons_enable_centerColor"/>
+            <corners android:radius="@dimen/chooseTime_button_radius"/>
+            <padding android:left="@dimen/chooseTime_button_paddingLeft"
+                android:right="@dimen/chooseTime_button_paddingRight"
+                android:bottom="@dimen/chooseTime_button_paddingBottom"
+                android:top="@dimen/chooseTime_button_paddingTop"/>
+        </shape>
+
+    </item>
+
+    <item
+        android:state_enabled="true">
+        <shape>
+            <stroke android:color="@color/chooseTime_buttons_enable_centerColor"/>
+            <corners android:radius="@dimen/chooseTime_button_radius"/>
+
+            <gradient
+                android:startColor="@color/chooseTime_buttons_enable_startColor"
+                android:centerColor="@color/chooseTime_buttons_enable_centerColor"
+                android:endColor="@color/chooseTime_buttons_enable_endColor"
+                android:angle="90"
+                android:type="sweep"/>
+
+            <padding android:left="@dimen/chooseTime_button_paddingLeft"
+                android:right="@dimen/chooseTime_button_paddingRight"
+                android:bottom="@dimen/chooseTime_button_paddingBottom"
+                android:top="@dimen/chooseTime_button_paddingTop"/>
+        </shape>
+
+    </item>
+</selector>

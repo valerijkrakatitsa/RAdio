@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:padding="@dimen/setTime_layout_padding">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/set_date"
+                android:textIsSelectable="false"
+                android:layout_weight="9"
+                android:clickable="false"
+                android:inputType="none"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="@dimen/chooseTime_choosenTime_text_textSize" />
+
+            <ImageButton
+                android:layout_width="@dimen/icon_button_width"
+                android:layout_height="@dimen/icon_button_height"
+                android:id="@+id/buttom_set_date"
+                android:src="@android:drawable/ic_menu_my_calendar"
+                style="@style/Widget.AppCompat.ImageButton"
+                android:layout_weight="2"
+                android:padding="@dimen/icon_button_paddingAll" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/choosenTime_layout_marginTop">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ShowTimeFrom"
+                android:textAlignment="center"
+                android:textSize="@dimen/chooseTime_choosenTime_text_textSize"
+                android:layout_weight="1"
+                android:paddingLeft="@dimen/choosenTime_text_padding" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ShowTimeTo"
+                android:textAlignment="center"
+                android:textSize="@dimen/chooseTime_choosenTime_text_textSize"
+                android:layout_weight="1"
+                android:paddingRight="@dimen/choosenTime_text_padding" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/chooseTime_layout_marginTop">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/timeMinus"
+                android:text="@string/buttonChooseTimeMore"
+                android:minHeight="@dimen/chooseTime_button_minHeight"
+                android:minWidth="@dimen/chooseTime_button_minWidth"
+                android:layout_gravity="center_vertical|fill_vertical"
+                android:gravity="center_vertical|fill_vertical"
+                style="@style/Semicode"  />
+
+            <io.apptik.widget.MultiSlider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/TimeRangeBar"
+                app:thumbNumber="2"
+                app:range1="@drawable/multislider_scrubber_track_holo_light"
+                app:stepsThumbsApart="5"
+                app:drawThumbsApart="true"
+                app:scaleMin="0"
+                android:thumb="@drawable/abc_seekbar_thumb_material"
+                app:thumbColor="@color/chooseTime_Seekbar_thumb"
+                app:rangeColor="@color/chooseTime_Seekbar_range"
+                app:scaleMax="1440"
+                android:layout_weight="2"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/timePlus"
+                android:text="@string/buttonChooseTimeLess"
+                android:minHeight="@dimen/chooseTime_button_minHeight"
+                android:minWidth="@dimen/chooseTime_button_minWidth"
+                android:layout_gravity="center_vertical|fill_vertical"
+                android:gravity="center_vertical|fill_vertical"
+                style="@style/Semicode" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/chooseTimeAndDateFragmentButtonStart"
+                android:text="@string/search_in_action_bar"
+                android:background="@drawable/background_button_search"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

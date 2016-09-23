@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_enabled="false">
+        <shape android:shape="oval">
+
+            <solid android:color="@color/button_play_pressed" />
+            <size
+                android:width="@dimen/drawer_buttonPlay_button_style_width"
+                android:height="@dimen/drawer_buttonPlay_button_style_height"/>
+
+            <corners android:bottomRightRadius="@dimen/drawer_buttonPlay_button_style_bottomRightRadius"
+                android:bottomLeftRadius="@dimen/drawer_buttonPlay_button_style_bottomLeftRadius"
+                android:topRightRadius="@dimen/drawer_buttonPlay_button_style_topRightRadius"
+                android:topLeftRadius="@dimen/drawer_buttonPlay_button_style_topLeftRadius"/>
+        </shape>
+    </item>
+
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+
+            <solid android:color="@color/button_play_pressed" />
+            <size
+                android:width="@dimen/drawer_buttonPlay_button_style_width"
+                android:height="@dimen/drawer_buttonPlay_button_style_height"/>
+
+            <corners android:bottomRightRadius="@dimen/drawer_buttonPlay_button_style_bottomRightRadius"
+                android:bottomLeftRadius="@dimen/drawer_buttonPlay_button_style_bottomLeftRadius"
+                android:topRightRadius="@dimen/drawer_buttonPlay_button_style_topRightRadius"
+                android:topLeftRadius="@dimen/drawer_buttonPlay_button_style_topLeftRadius"/>
+        </shape>
+    </item>
+
+
+
+    <item>
+        <shape android:shape="oval">
+
+            <solid android:color="@color/button_play" />
+            <size
+                android:width="@dimen/drawer_buttonPlay_button_style_width"
+                android:height="@dimen/drawer_buttonPlay_button_style_height"/>
+
+            <corners android:bottomRightRadius="@dimen/drawer_buttonPlay_button_style_bottomRightRadius"
+                android:bottomLeftRadius="@dimen/drawer_buttonPlay_button_style_bottomLeftRadius"
+                android:topRightRadius="@dimen/drawer_buttonPlay_button_style_topRightRadius"
+                android:topLeftRadius="@dimen/drawer_buttonPlay_button_style_topLeftRadius"/>
+        </shape>
+    </item>
+
+</selector>

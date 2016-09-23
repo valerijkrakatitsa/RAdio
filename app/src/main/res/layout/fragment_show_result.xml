@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/results_header_layout_height"
+            android:orientation="vertical"
+            android:background="@color/blue_header"
+            android:elevation="@dimen/results_header_layout_elevation"
+            android:paddingStart="@dimen/showResults_header_layout_paddingStart"
+            android:paddingEnd="@dimen/showResults_header_layout_paddingEnd"
+            android:paddingLeft="@dimen/showResults_header_layout_paddingStart"
+            android:paddingRight="@dimen/showResults_header_layout_paddingEnd"
+            android:paddingTop="@dimen/showResults_header_layout_paddingTop">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/showDateInResultFragment"
+                android:textSize="@dimen/showResults_header_date_text_textSize" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/showResults_header_time_layout_paddingTop">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/showTimeFromInResultFragment"
+                    android:gravity="right"
+                    android:textSize="@dimen/showResults_header_time__textSize"
+                    android:layout_margin="@dimen/showResults_header_time_text_margin" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="@dimen/showResults_header_time__textSize"
+                    android:layout_margin="@dimen/showResults_header_time_text_margin" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/showTimeToInResultFragment"
+                    android:gravity="left|center"
+                    android:textSize="@dimen/showResults_header_time__textSize"
+                    android:layout_margin="@dimen/showResults_header_time_text_margin" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/showResultListView" />
+
+</LinearLayout>
