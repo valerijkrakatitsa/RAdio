@@ -110,7 +110,7 @@
                 <ImageView
                     android:layout_width="@dimen/drawer_optionPanel_Layouts_image_width"
                     android:layout_height="wrap_content"
-                    android:src="@android:drawable/ic_menu_add"
+                    android:src="@drawable/icon_add_in_vk_list"
                     android:layout_gravity="start|center_vertical"
                     android:minHeight="@dimen/drawer_optionPanel_Layouts_image_minHeight"
                     android:minWidth="@dimen/drawer_optionPanel_Layouts_image_minWidth"
@@ -139,7 +139,7 @@
                     android:layout_width="@dimen/drawer_optionPanel_Layouts_image_width"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/strShowMoreResults"
-                    android:src="@android:drawable/ic_menu_directions"
+                    android:src="@drawable/icon_show_more_results"
                     android:minHeight="@dimen/drawer_optionPanel_Layouts_image_minHeight"
                     android:minWidth="@dimen/drawer_optionPanel_Layouts_image_minWidth"
                     android:layout_gravity="center" />

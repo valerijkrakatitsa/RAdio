@@ -12,6 +12,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.vkrakatitsa.radio.Model.VKSong;
+import com.vkrakatitsa.radio.R;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -43,8 +44,14 @@ public class DownloadService extends Service {
             return-1;
         }
 
+        //Check External Storage access
+        if (!isExternalStorageWritable()){
+            showToast(getResources().getString(R.string.toast_externalStorage_not_available));
+            return 0;
+        }
         m_strPath= Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
 
+        // Obtain download data
         String url =extra.getString(INTENT_EXTRA_LINK_KEY);
         String title= extra.getString(INTENT_EXTRA_TITILE_KEY);
         String artist = extra.getString(INTENT_EXTRA_ARTIST_KEY);
@@ -110,17 +117,9 @@ public class DownloadService extends Service {
                 connection.disconnect();
                 output.close();
 
-                //Show "Dowbload complete" toast in main thread
-                Handler handler = new Handler(Looper.getMainLooper());
-                handler.post(new Runnable() {
-
-                    @Override
-                    public void run() {
-                        Toast.makeText(DownloadService.this.getApplicationContext(),"Download "+m_songData.getSongTitle()+ " complete",Toast.LENGTH_SHORT).show();
-                    }
-                });
-                //stop Service
-                stopSelf();
+                //Sign to user "Download Complete"
+                String strMessage = "Download "+m_songData.getSongTitle()+ " complete";
+                showToast(strMessage);
 
             } catch (MalformedURLException e) {
                 Log.e("Look",this.getClass().getCanonicalName()+"\n \n Error: \n "+e.getMessage());
@@ -138,4 +137,38 @@ public class DownloadService extends Service {
     public IBinder onBind(Intent intent) {
         return null;
     }
+
+    //----------------------------------------------------------------------------------------------showToast
+    /**
+     * Show Toast message in UI Thread and stop service
+     * @param strMessage - message to show
+     */
+    private void showToast(final String strMessage ){
+        //Show "Dowbload complete" toast in ui thread
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
+
+            @Override
+            public void run() {
+                Toast.makeText(DownloadService.this.getApplicationContext(),strMessage,Toast.LENGTH_SHORT).show();
+            }
+        });
+        //stop Service
+        stopSelf();
+    }
+
+    //----------------------------------------------------------------------------------------------isExternalStorageWritable
+
+    /**
+     * Checks if external storage is available for read and write
+     * @return  true if external storage available. false if not.
+     */
+    public boolean isExternalStorageWritable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            return true;
+        }
+        return false;
+    }
+
 }
