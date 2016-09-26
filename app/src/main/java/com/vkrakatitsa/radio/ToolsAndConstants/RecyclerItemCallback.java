@@ -1,11 +1,21 @@
 package com.vkrakatitsa.radio.ToolsAndConstants;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.ColorInt;
+import android.support.annotation.ColorRes;
+import android.support.v4.graphics.ColorUtils;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.util.Log;
+import android.view.View;
 
 public class RecyclerItemCallback extends ItemTouchHelper.Callback {
 
     public ItemTouchHelperForAdapterInterface touchHelperInerface=null;
+    private Drawable mItemBackground;
+    int mColor;
 
     public RecyclerItemCallback(ItemTouchHelperForAdapterInterface touchHelperInerface){
         this.touchHelperInerface = touchHelperInerface;
@@ -43,5 +53,22 @@ public class RecyclerItemCallback extends ItemTouchHelper.Callback {
         return false;
     }
 
+    @Override
+    public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int actionState) {
+        //Change Item color on start Drag
+        if(actionState== ItemTouchHelper.ACTION_STATE_DRAG){
+            View item = viewHolder.itemView;
+            mItemBackground= item.getBackground(); //get current item background
+            item.setBackgroundColor(Color.parseColor("#951e9dd6"));  //set background color
+            item.setScaleX(0.97f);
+        }
+        super.onSelectedChanged(viewHolder, actionState);
+    }
 
+    @Override
+    public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+        viewHolder.itemView.setBackground(mItemBackground);
+        viewHolder.itemView.setScaleX(1f);
+        super.clearView(recyclerView, viewHolder);
+    }
 }
