@@ -185,9 +185,10 @@ public class MainActivity extends AppCompatActivity implements RadioStationListA
     @Override
     protected void onDestroy() {
         Log.d("Look", "MainActivity onDestroy");
-        stopService(new Intent(this, PlayMusicService.class));
         m_playMusicService.pauseMusic();
-        m_playMusicService.stopSelf();
+        unbindService(serviceConnection);
+        stopService(new Intent(this, PlayMusicService.class));
+
         super.onDestroy();
     }
 }

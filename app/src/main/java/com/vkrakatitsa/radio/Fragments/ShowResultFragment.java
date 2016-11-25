@@ -132,7 +132,7 @@ public class ShowResultFragment extends Fragment implements AdapterView.OnItemCl
 
     }
 
-    //--------------------------------------------------------------------------------------------------------OnItemClick
+    //----------------------------------------------------------------------------------------------OnItemClick
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
@@ -150,7 +150,7 @@ public class ShowResultFragment extends Fragment implements AdapterView.OnItemCl
         if(checkVkLogin()) {
             m_playMusicService.createURL(searchLine);
         }
-        //show Snackba with search in browser
+        //show Snackbar with search in browser
         showSnackbar(searchLine);
     }
 
@@ -214,6 +214,7 @@ public class ShowResultFragment extends Fragment implements AdapterView.OnItemCl
         if(snackbar!=null){
             snackbar.dismiss();
         }
+        getActivity().unbindService(serviceConnection);
         super.onDestroyView();
     }
 }

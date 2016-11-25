@@ -69,7 +69,7 @@ public class BaseConnection {
         strTime = strTime.replace(":", "");
         int nTime = Integer.parseInt(strTime);
 
-        Log.d("Look","BaseConnection - isMyTime " +  nTime+ "  nTimeFrom -"+nTimeFrom+"  nTime to ->"+nTimeTo);
+        Log.d("RadioLook","BaseConnection - isMyTime " +  nTime+ "  nTimeFrom -"+nTimeFrom+"  nTime to ->"+nTimeTo);
 
         if ((nTime <= nTimeTo) && (nTime >= nTimeFrom)) {
             return true;
@@ -94,7 +94,7 @@ public class BaseConnection {
     public void saveItem(String strTime, String strSong, String strSinger) {
 
         arrResult.put(strTime, strSinger + " ^ "+ strSong);
-        Log.d("Look",this.getClass().getCanonicalName()+" - saveItem : Saved line->"+strSinger + " ^ "+ strSong);
+        Log.d("RadioLook",this.getClass().getCanonicalName()+" - saveItem : Saved line->"+strSinger + " ^ "+ strSong);
 
 
     }

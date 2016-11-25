@@ -77,6 +77,7 @@ public class PlayMusicService extends Service implements Serializable{
         if(m_Player != null){
             m_Player.stop();
             m_Player.release();
+            m_Player=null;
         }
         try {
 
@@ -280,5 +281,19 @@ public class PlayMusicService extends Service implements Serializable{
          return m_currentSong.url;
         }
         return null;
+    }
+
+
+    @Override
+    public boolean onUnbind(Intent intent) {
+        Log.d("Look", this.getClass().getCanonicalName()+" onUnbind ");
+        super.onUnbind(intent);
+        return true;
+    }
+
+    @Override
+    public void onDestroy() {
+        Log.d("Look", this.getClass().getCanonicalName()+" onDestroy ");
+        super.onDestroy();
     }
 }

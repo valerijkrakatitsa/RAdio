@@ -12,6 +12,7 @@ import org.htmlcleaner.HtmlCleaner;
 import org.htmlcleaner.TagNode;
 
 import java.io.IOException;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Calendar;
@@ -38,11 +39,17 @@ public class Group1Connection extends BaseConnection {
         try {
             URL url = new URL(link);
 
+            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.setRequestProperty("Cookie","AllTrackRadio=563");
+            connection.setRequestProperty("User-Agent","\"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:49.0) Gecko/20100101 Firefox/49.0\"");
+            connection.setDoInput(true);
+            connection.setDoOutput(true);
+
             CleanerProperties properties = new CleanerProperties();
             properties.setCharset(fmStationTags.getCharset());
             HtmlCleaner cleaner = new HtmlCleaner(properties);
-
-            TagNode rootNode = cleaner.clean(url);
+            TagNode rootNode = cleaner.clean(connection.getInputStream());
 
             String playList = fmStationTags.getPlayListTag();   // 2 values to find PlayList Element
             String attName= playList.substring(0, playList.indexOf('*'));    // attribute name to get playListNode

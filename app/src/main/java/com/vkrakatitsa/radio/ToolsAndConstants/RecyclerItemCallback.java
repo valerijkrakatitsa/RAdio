@@ -1,21 +1,15 @@
 package com.vkrakatitsa.radio.ToolsAndConstants;
 
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.ColorInt;
-import android.support.annotation.ColorRes;
-import android.support.v4.graphics.ColorUtils;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.util.Log;
 import android.view.View;
 
 public class RecyclerItemCallback extends ItemTouchHelper.Callback {
 
     public ItemTouchHelperForAdapterInterface touchHelperInerface=null;
     private Drawable mItemBackground;
-    int mColor;
 
     public RecyclerItemCallback(ItemTouchHelperForAdapterInterface touchHelperInerface){
         this.touchHelperInerface = touchHelperInerface;

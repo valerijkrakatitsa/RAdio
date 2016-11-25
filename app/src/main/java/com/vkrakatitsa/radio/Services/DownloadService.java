@@ -69,7 +69,7 @@ public class DownloadService extends Service {
         m_executorService.execute(runnable);
 
 
-        return 0;
+        return START_STICKY;
     }
 
     public class DownLoadSong implements Runnable{

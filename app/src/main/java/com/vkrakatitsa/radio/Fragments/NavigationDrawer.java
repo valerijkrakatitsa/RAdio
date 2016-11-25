@@ -313,7 +313,7 @@ public class NavigationDrawer extends Fragment implements View.OnClickListener, 
     public void updateProgressBar(){
         m_Handler.postDelayed(m_UpdateTimeTask,100); // update progress every 100 milliseconds
     }
-    //---------------------------------------------------------------------------------------------- mUpdateTimeTask Runnable;
+    //-------------------------------------------------------------------------- -------------------- mUpdateTimeTask Runnable;
     private Runnable m_UpdateTimeTask= new Runnable() {
         @Override
         public void run() {
