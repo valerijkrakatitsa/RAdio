@@ -30,9 +30,9 @@ public class RadioListSettings {
     private String bumblebee;
     private String nashe;
     private String melodia;
-    private String bisnes;
+   // private String bisnes;
     private String mfm;
-    private String shanson;
+    //private String shanson;
     private String lux;
     private String friday;
     private String relax;
@@ -61,7 +61,7 @@ public class RadioListSettings {
         this.context=context;
     }
 
-    public Context getContext(){
+    private Context getContext(){
         return context;
     }
 
@@ -97,9 +97,9 @@ public class RadioListSettings {
          bumblebee= context.getResources().getString(R.string.bumblebee);
          nashe= context.getResources().getString(R.string.nashe);
          melodia= context.getResources().getString(R.string.melodia);
-         bisnes= context.getResources().getString(R.string.bisnes);
+        // bisnes= context.getResources().getString(R.string.bisnes);
          mfm= context.getResources().getString(R.string.mfm);
-         shanson= context.getResources().getString(R.string.shanson);
+         //shanson= context.getResources().getString(R.string.shanson);
          lux= context.getResources().getString(R.string.lux);
         friday= context.getResources().getString(R.string.pjatnizza);
         relax = getContext().getResources().getString(R.string.relax);
@@ -122,9 +122,9 @@ public class RadioListSettings {
         engine.insert(new RadioStationItem(R.drawable.logo_bunmble_bee,bumblebee,i++,"http://radio.i.ua/bumblebeefm.ru/archive/",0));
         engine.insert(new RadioStationItem(R.drawable.logo_nashe_radio,nashe,i++,"http://radio.i.ua/nashe.radio/archive/",0));
         engine.insert(new RadioStationItem(R.drawable.logo_melodia,melodia,i++,"http://radio.i.ua/melodiya/archive/",0));
-        engine.insert(new RadioStationItem(R.drawable.logo_business,bisnes,i++,"http://radio.i.ua/business.fm/archive/",0));
+        //engine.insert(new RadioStationItem(R.drawable.logo_business,bisnes,i++,"http://radio.i.ua/business.fm/archive/",0));
         engine.insert(new RadioStationItem(R.drawable.logo_mfm,mfm,i++,"http://gr.kh.ua/playlist//list.html",2));
-        engine.insert(new RadioStationItem(R.drawable.logo_shanson,shanson,i++,"http://radioshanson.fm/info/plyei-list-dnya-",4));
+        //engine.insert(new RadioStationItem(R.drawable.logo_shanson,shanson,i++,"http://radioshanson.fm/info/plyei-list-dnya-",4));
         engine.insert(new RadioStationItem(R.drawable.logo_lux,lux,i++,"http://www.moreradio.org/playlist_radio/radio_lux_fm/",1));
         engine.insert(new RadioStationItem(R.drawable.logo_pyatnitsa,friday,i++,"http://radio.i.ua/radiopyatnica/archive/",0));
         engine.insert(new RadioStationItem(R.drawable.logo_relax,relax,i++,"http://www.radiorelax.ua/playlist/",3));
@@ -139,11 +139,17 @@ public class RadioListSettings {
         engine.insert(new RadioTagsItem(1,"id*playlist","itemprop*track","class*ffDigits time","class*track shFloat shLineNowrap","itemprop*name","windows-1251"));
         engine.insert(new RadioTagsItem(2,"","","","","","UFF-8"));
         engine.insert(new RadioTagsItem(3,"","class*row song-list","class*time songTime","class*artist","class*song","UTF-8"));
-        engine.insert(new RadioTagsItem(4,"td","td","","","","UTF-8"));
+        //engine.insert(new RadioTagsItem(4,"td","td","","","","UTF-8"));
     }
 
     //----------------------------------------------------------------------------------------------saveSettings
     // save radio stations positions in thread
+
+    /**
+     * Save positions of radio stadtions list , in parallel thread
+     * @param array array with radio items, list from mainScreen
+     * @param context context for save data
+     */
     public void saveSettings(final ArrayList<RadioStationItem> array,final Context context) {
         new Thread(new Runnable() {
             @Override

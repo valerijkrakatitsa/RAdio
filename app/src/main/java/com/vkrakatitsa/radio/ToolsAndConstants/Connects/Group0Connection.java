@@ -2,11 +2,13 @@ package com.vkrakatitsa.radio.ToolsAndConstants.Connects;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.vkrakatitsa.radio.Model.Engine.RadioItemEngine;
 import com.vkrakatitsa.radio.Model.Engine.RadioTagEngine;
 import com.vkrakatitsa.radio.Model.RadioStationItem;
 import com.vkrakatitsa.radio.Model.RadioTagsItem;
+import com.vkrakatitsa.radio.R;
 
 import org.htmlcleaner.CleanerProperties;
 import org.htmlcleaner.HtmlCleaner;
@@ -103,18 +105,27 @@ public class Group0Connection extends BaseConnection {
 
 
         } catch (MalformedURLException e) {
-            Log.e("Look","MalformedURLException in GroupConnection1  "+e.toString());
+            Log.e("Look","MalformedURLException in GroupConnection0 "+e.toString());
             e.printStackTrace();
         } catch (IOException e) {
-            Log.e("Look","IOException in GroupConnection1  "+e.getMessage());
+            Log.e("Look","IOException in GroupConnection0  "+e.getMessage());
+            e.printStackTrace();
+        } catch (ArrayIndexOutOfBoundsException e){
+            Log.e("Look","ArrayIndexOutOfBoundsException in GroupConnection0  " +
+                    "\n Check internet connection"+e.getMessage());
+            Toast.makeText(getContext(), getContext().getString(R.string.toast_CheckInternetException),Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
 
 }
 
+    /**
+     * Create link for group0Connection radio types
+     * @param strLink - link on  radio archive
+     * @param strDate - date to search in format dd-MM-yyyy
+     * @return Link in format: Link+date. ("http://radio.i.ua/hit.fm/archive/14")
+     */
     public String createLink(String strLink,String strDate ){
-
-        //Input date format dd-mm-yyyy
 
         strDate=strDate.substring(0,strDate.indexOf('-'));
         strLink = strLink+strDate;

@@ -2,10 +2,12 @@ package com.vkrakatitsa.radio.ToolsAndConstants.Connects;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.vkrakatitsa.radio.Model.Engine.RadioTagEngine;
 import com.vkrakatitsa.radio.Model.RadioStationItem;
 import com.vkrakatitsa.radio.Model.RadioTagsItem;
+import com.vkrakatitsa.radio.R;
 
 import org.htmlcleaner.CleanerProperties;
 import org.htmlcleaner.HtmlCleaner;
@@ -25,12 +27,8 @@ public class Group1Connection extends BaseConnection {
     public Group1Connection(Context context, RadioStationItem obj, String strDate, String strTimeFrom, String strTimeTo) {
         super(context, obj, strDate, strTimeFrom, strTimeTo);
 
-
-
         RadioTagEngine engine = new RadioTagEngine(context);
-
         fmStationTags = engine.getItemById(obj.getTagType());
-
         link = createLink(obj.getLink(),strDate);
     }
 
@@ -109,11 +107,22 @@ public class Group1Connection extends BaseConnection {
         } catch (IOException e) {
             Log.e("Look","IOException in GroupConnection1  "+e.getMessage());
             e.printStackTrace();
+        } catch (ArrayIndexOutOfBoundsException e){
+            Log.e("Look","ArrayIndexOutOfBoundsException in GroupConnection0  " +
+                    "\n Check internet connection"+e.getMessage());
+            Toast.makeText(getContext(), getContext().getString(R.string.toast_CheckInternetException),Toast.LENGTH_LONG).show();
+            e.printStackTrace();
         }
 
     }
 
-    public String createLink(String strLink,String strDate ){
+    /**
+     * Create link for group1Connection radio types
+     * @param strLink - link on  radio archive
+     * @param strDate - date to search in format dd-MM-yyyy
+     * @return Link in format: Link+date_Month_Year. ("http://www.moreradio.org/playlist_radio/radio_lux_fm/21_august_2016")
+     */
+    private String createLink(String strLink,String strDate ){
 
         //Input date format dd-mm-yyyy
 
@@ -122,7 +131,7 @@ public class Group1Connection extends BaseConnection {
         String strMonth= strDate.substring(strDate.indexOf('-')+1,strDate.lastIndexOf('-'));
         String strYear = strDate.substring(strDate.lastIndexOf('-')+1, strDate.length());
 
-       // Log.d("Look","Group1Connection-createLink: day ->"+strDay+"  month ->"+strMonth+"  year ->"+strYear);
+       //Log.d("Look","Group1Connection-createLink: day ->"+strDay+"  month ->"+strMonth+"  year ->"+strYear);
 
         if(strMonth.equals("01")){
             strMonth = "january";

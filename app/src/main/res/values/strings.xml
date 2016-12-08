@@ -42,4 +42,5 @@
     <string name="drawer_NoPlayedSong">No Song</string>
     <string name="drawer_PlayedSong_time">--:--</string>
     <string name="toast_externalStorage_not_available">External Storage is not available</string>
+    <string name="toast_CheckInternetException">something went wrong. Please check your internet connection</string>
 </resources>

@@ -2,10 +2,12 @@ package com.vkrakatitsa.radio.ToolsAndConstants.Connects;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.vkrakatitsa.radio.Model.Engine.RadioTagEngine;
 import com.vkrakatitsa.radio.Model.RadioStationItem;
 import com.vkrakatitsa.radio.Model.RadioTagsItem;
+import com.vkrakatitsa.radio.R;
 
 import org.htmlcleaner.CleanerProperties;
 import org.htmlcleaner.HtmlCleaner;
@@ -88,17 +90,25 @@ public class Group3Connection extends BaseConnection {
         } catch (IOException e) {
             Log.e("Look","IOException in GroupConnection1  "+e.getMessage());
             e.printStackTrace();
+        } catch (ArrayIndexOutOfBoundsException e){
+            Log.e("Look","ArrayIndexOutOfBoundsException in GroupConnection0  " +
+                    "\n Check internet connection"+e.getMessage());
+            Toast.makeText(getContext(), getContext().getString(R.string.toast_CheckInternetException),Toast.LENGTH_LONG).show();
+            e.printStackTrace();
         }
 
     }
 
+    /**
+     * Create link for group3Connection radio types Does not support in this type
+     * @param strLink - link on  radio archive
+     * @param strDate - date for search in format dd-MM-yyyy
+     * @return Link in format: Link+date+".html". ("http://www.radiorelax.ua/playlist/12-11-2016.html")
+     */
 
     public String createLink(String strLink,String strDate ){
 
-        //Input date format dd-mm-yyyy
-
         strLink = strLink+strDate+".html";
-
         Log.d("Look","Group0Connection-createLink: link is ->"+strLink);
 
         return strLink;
